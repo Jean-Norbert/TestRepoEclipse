@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f699d687-23ff-4a5e-a731-6a53649d9d52" activeEnvironment="Default" name="Countryname" resourceRoot="" soapui-version="5.4.0" encryptionMode="Not encrypted" updated="3.10.1 2021-10-13T15:50:30Z" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="5f9e8b55-e32b-4903-a1b2-747354470977" wsaVersion="NONE" name="SOAPDemoSoap" type="wsdl" bindingName="{http://tempuri.org}SOAPDemoSoap" soapVersion="1_1" anonymous="optional" definition="https://www.crcind.com/csp/samples/SOAP.Demo.CLS?WSDL=1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.crcind.com/csp/samples/SOAP.Demo.CLS?WSDL=1"><con:part><con:url>https://www.crcind.com/csp/samples/SOAP.Demo.CLS?WSDL=1</con:url><con:content><![CDATA[<definitions targetNamespace="http://tempuri.org" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:import namespace="http://tempuri.org/ByNameDataSet" schemaLocation="https://www.crcind.com:443/csp/samples/SOAP.ByNameDataSet.cls?XSD"/>
+      <s:import namespace="http://tempuri.org/QueryByName_DataSet" schemaLocation="https://www.crcind.com:443/csp/samples/SOAP.Demo.QueryByName.DS.cls?XSD"/>
+      <s:element name="AddInteger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="Arg1" type="s:long"/>
+            <s:element minOccurs="0" name="Arg2" type="s:long"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddIntegerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="AddIntegerResult" type="s:long"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivideInteger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="Arg1" type="s:long"/>
+            <s:element minOccurs="0" name="Arg2" type="s:long"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivideIntegerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="DivideIntegerResult" type="s:long"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="id" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="FindPersonResult" type="s0:Person"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Employee">
+        <s:complexContent>
+          <s:extension base="s0:Person">
+            <s:sequence>
+              <s:element minOccurs="0" name="Title">
+                <s:simpleType>
+                  <s:restriction base="s:string">
+                    <s:maxLength value="50"/>
+                  </s:restriction>
+                </s:simpleType>
+              </s:element>
+              <s:element minOccurs="0" name="Salary">
+                <s:simpleType>
+                  <s:restriction base="s:long">
+                    <s:maxInclusive value="100000"/>
+                    <s:minInclusive value="0"/>
+                  </s:restriction>
+                </s:simpleType>
+              </s:element>
+              <s:element minOccurs="0" name="Notes" type="s:string"/>
+              <s:element minOccurs="0" name="Picture" type="s:base64Binary"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Person">
+        <s:sequence>
+          <s:element name="Name" type="s:string"/>
+          <s:element name="SSN" type="s:string"/>
+          <s:element minOccurs="0" name="DOB" type="s:date"/>
+          <s:element minOccurs="0" name="Home" type="s0:Address"/>
+          <s:element minOccurs="0" name="Office" type="s0:Address"/>
+          <s:element minOccurs="0" name="Spouse" type="s0:Person"/>
+          <s:element minOccurs="0" name="FavoriteColors" type="s0:ArrayOfFavoriteColorsItemString"/>
+          <s:element minOccurs="0" name="Age" type="s:long"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" name="Street">
+            <s:simpleType>
+              <s:restriction base="s:string">
+                <s:maxLength value="80"/>
+              </s:restriction>
+            </s:simpleType>
+          </s:element>
+          <s:element minOccurs="0" name="City">
+            <s:simpleType>
+              <s:restriction base="s:string">
+                <s:maxLength value="80"/>
+              </s:restriction>
+            </s:simpleType>
+          </s:element>
+          <s:element minOccurs="0" name="State">
+            <s:simpleType>
+              <s:restriction base="s:string">
+                <s:maxLength value="2"/>
+              </s:restriction>
+            </s:simpleType>
+          </s:element>
+          <s:element minOccurs="0" name="Zip">
+            <s:simpleType>
+              <s:restriction base="s:string">
+                <s:maxLength value="5"/>
+              </s:restriction>
+            </s:simpleType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFavoriteColorsItemString">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="FavoriteColorsItem" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="name" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetByNameResult" type="s0:DataSet"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataSet">
+        <s:sequence>
+          <s:element ref="s:schema"/>
+          <s:any/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDataSetByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="name" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataSetByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetDataSetByNameResult" type="s0:ByNameDataSet"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ByNameDataSet">
+        <s:sequence>
+          <s:any namespace="http://tempuri.org/ByNameDataSet"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="name" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetListByNameResult" type="s0:ArrayOfPersonIdentificationPersonIdentification"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonIdentificationPersonIdentification">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="PersonIdentification" nillable="true" type="s0:PersonIdentification"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PersonIdentification">
+        <s:sequence>
+          <s:element minOccurs="0" name="ID" type="s:string"/>
+          <s:element name="Name" type="s:string"/>
+          <s:element name="SSN" type="s:string"/>
+          <s:element minOccurs="0" name="DOB" type="s:date"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LookupCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="zip" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LookupCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="LookupCityResult" type="s0:Address"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mission">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="MissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="MissionResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="name" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="QueryByNameResult" type="s0:QueryByName_DataSet"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QueryByName_DataSet">
+        <s:sequence>
+          <s:any namespace="http://tempuri.org/QueryByName_DataSet"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="AddIntegerSoapIn">
+    <part name="parameters" element="s0:AddInteger"/>
+  </message>
+  <message name="AddIntegerSoapOut">
+    <part name="parameters" element="s0:AddIntegerResponse"/>
+  </message>
+  <message name="DivideIntegerSoapIn">
+    <part name="parameters" element="s0:DivideInteger"/>
+  </message>
+  <message name="DivideIntegerSoapOut">
+    <part name="parameters" element="s0:DivideIntegerResponse"/>
+  </message>
+  <message name="FindPersonSoapIn">
+    <part name="parameters" element="s0:FindPerson"/>
+  </message>
+  <message name="FindPersonSoapOut">
+    <part name="parameters" element="s0:FindPersonResponse"/>
+  </message>
+  <message name="GetByNameSoapIn">
+    <part name="parameters" element="s0:GetByName"/>
+  </message>
+  <message name="GetByNameSoapOut">
+    <part name="parameters" element="s0:GetByNameResponse"/>
+  </message>
+  <message name="GetDataSetByNameSoapIn">
+    <part name="parameters" element="s0:GetDataSetByName"/>
+  </message>
+  <message name="GetDataSetByNameSoapOut">
+    <part name="parameters" element="s0:GetDataSetByNameResponse"/>
+  </message>
+  <message name="GetListByNameSoapIn">
+    <part name="parameters" element="s0:GetListByName"/>
+  </message>
+  <message name="GetListByNameSoapOut">
+    <part name="parameters" element="s0:GetListByNameResponse"/>
+  </message>
+  <message name="LookupCitySoapIn">
+    <part name="parameters" element="s0:LookupCity"/>
+  </message>
+  <message name="LookupCitySoapOut">
+    <part name="parameters" element="s0:LookupCityResponse"/>
+  </message>
+  <message name="MissionSoapIn">
+    <part name="parameters" element="s0:Mission"/>
+  </message>
+  <message name="MissionSoapOut">
+    <part name="parameters" element="s0:MissionResponse"/>
+  </message>
+  <message name="QueryByNameSoapIn">
+    <part name="parameters" element="s0:QueryByName"/>
+  </message>
+  <message name="QueryByNameSoapOut">
+    <part name="parameters" element="s0:QueryByNameResponse"/>
+  </message>
+  <portType name="SOAPDemoSoap">
+    <operation name="AddInteger">
+      <input message="s0:AddIntegerSoapIn"/>
+      <output message="s0:AddIntegerSoapOut"/>
+    </operation>
+    <operation name="DivideInteger">
+      <input message="s0:DivideIntegerSoapIn"/>
+      <output message="s0:DivideIntegerSoapOut"/>
+    </operation>
+    <operation name="FindPerson">
+      <input message="s0:FindPersonSoapIn"/>
+      <output message="s0:FindPersonSoapOut"/>
+    </operation>
+    <operation name="GetByName">
+      <input message="s0:GetByNameSoapIn"/>
+      <output message="s0:GetByNameSoapOut"/>
+    </operation>
+    <operation name="GetDataSetByName">
+      <input message="s0:GetDataSetByNameSoapIn"/>
+      <output message="s0:GetDataSetByNameSoapOut"/>
+    </operation>
+    <operation name="GetListByName">
+      <input message="s0:GetListByNameSoapIn"/>
+      <output message="s0:GetListByNameSoapOut"/>
+    </operation>
+    <operation name="LookupCity">
+      <input message="s0:LookupCitySoapIn"/>
+      <output message="s0:LookupCitySoapOut"/>
+    </operation>
+    <operation name="Mission">
+      <input message="s0:MissionSoapIn"/>
+      <output message="s0:MissionSoapOut"/>
+    </operation>
+    <operation name="QueryByName">
+      <input message="s0:QueryByNameSoapIn"/>
+      <output message="s0:QueryByNameSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="SOAPDemoSoap" type="s0:SOAPDemoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="AddInteger">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.AddInteger" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="DivideInteger">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.DivideInteger" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="FindPerson">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.FindPerson" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetByName">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.GetByName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetDataSetByName">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.GetDataSetByName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetListByName">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.GetListByName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="LookupCity">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.LookupCity" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="Mission">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.Mission" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="QueryByName">
+      <soap:operation soapAction="http://tempuri.org/SOAP.Demo.QueryByName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SOAPDemo">
+    <port name="SOAPDemoSoap" binding="s0:SOAPDemoSoap">
+      <soap:address location="https://www.crcind.com:443/csp/samples/SOAP.Demo.cls"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://www.crcind.com:443/csp/samples/SOAP.ByNameDataSet.cls?XSD</con:url><con:content><![CDATA[<s:schema id="ByNameDataSet" targetNamespace="http://tempuri.org/ByNameDataSet" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns="http://tempuri.org/ByNameDataSet" xmlns:mstns="http://tempuri.org/ByNameDataSet" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <s:element name="ByNameDataSet" msdata:IsDataSet="true">
+    <s:complexType>
+      <s:choice maxOccurs="unbounded">
+        <s:element name="ByName">
+          <s:complexType>
+            <s:sequence>
+              <s:element name="ID" type="s:long" minOccurs="0"/>
+              <s:element name="Name" type="s:string" minOccurs="0"/>
+              <s:element name="DOB" type="s:date" minOccurs="0"/>
+              <s:element name="SSN" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:complexType>
+        </s:element>
+      </s:choice>
+    </s:complexType>
+    <s:unique name="Constraint1" msdata:PrimaryKey="true">
+      <s:selector xpath=".//mstns:ByName"/>
+      <s:field xpath="mstns:ID"/>
+    </s:unique>
+  </s:element>
+</s:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://www.crcind.com:443/csp/samples/SOAP.Demo.QueryByName.DS.cls?XSD</con:url><con:content><![CDATA[<s:schema id="QueryByName_DataSet" targetNamespace="http://tempuri.org/QueryByName_DataSet" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns="http://tempuri.org/QueryByName_DataSet" xmlns:mstns="http://tempuri.org/QueryByName_DataSet" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <s:element name="QueryByName_DataSet" msdata:IsDataSet="true">
+    <s:complexType>
+      <s:choice maxOccurs="unbounded">
+        <s:element name="QueryByName">
+          <s:complexType>
+            <s:sequence>
+              <s:element name="ID" type="s:long" minOccurs="0"/>
+              <s:element name="Name" type="s:string" minOccurs="0"/>
+              <s:element name="DOB" type="s:date" minOccurs="0"/>
+              <s:element name="SSN" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:complexType>
+        </s:element>
+      </s:choice>
+    </s:complexType>
+    <s:unique name="Constraint1" msdata:PrimaryKey="true">
+      <s:selector xpath=".//mstns:QueryByName"/>
+      <s:field xpath="mstns:ID"/>
+    </s:unique>
+  </s:element>
+</s:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint></con:endpoints><con:operation id="511448b4-520a-4c42-98e8-0025cf315f5d" isOneWay="false" action="http://tempuri.org/SOAP.Demo.AddInteger" name="AddInteger" bindingOperationName="AddInteger" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cf29ec8d-f3fa-4efc-88af-0af04542b3b1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:AddInteger>\r
+         <!--Optional:-->\r
+         <tem:Arg1>?</tem:Arg1>\r
+         <!--Optional:-->\r
+         <tem:Arg2>?</tem:Arg2>\r
+      </tem:AddInteger>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.AddInteger"/></con:call></con:operation><con:operation id="33c0a6f1-eda4-4cc7-9f5f-0e0aafd7f16c" isOneWay="false" action="http://tempuri.org/SOAP.Demo.DivideInteger" name="DivideInteger" bindingOperationName="DivideInteger" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="edc298a1-e1fb-4083-9225-e4d83a6d2df2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DivideInteger>\r
+         <!--Optional:-->\r
+         <tem:Arg1>?</tem:Arg1>\r
+         <!--Optional:-->\r
+         <tem:Arg2>?</tem:Arg2>\r
+      </tem:DivideInteger>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.DivideInteger"/></con:call></con:operation><con:operation id="ff89d03f-3f7d-46db-bcd9-65dc0e27bd3f" isOneWay="false" action="http://tempuri.org/SOAP.Demo.FindPerson" name="FindPerson" bindingOperationName="FindPerson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8bc4ad3a-cb36-445f-b5e6-29cd31a2be0d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:FindPerson>\r
+         <!--Optional:-->\r
+         <tem:id>?</tem:id>\r
+      </tem:FindPerson>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.FindPerson"/></con:call></con:operation><con:operation id="025ed559-5865-49a7-926f-29cbc599ba9e" isOneWay="false" action="http://tempuri.org/SOAP.Demo.GetByName" name="GetByName" bindingOperationName="GetByName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c1749eec-0b56-4ae7-9305-aaa73c0a097d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetByName>\r
+         <!--Optional:-->\r
+         <tem:name>?</tem:name>\r
+      </tem:GetByName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.GetByName"/></con:call></con:operation><con:operation id="c55faddf-cc1a-43db-b8e1-6604951dc9b8" isOneWay="false" action="http://tempuri.org/SOAP.Demo.GetDataSetByName" name="GetDataSetByName" bindingOperationName="GetDataSetByName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8112e7ef-b909-4cfe-913f-b0e950547891" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetDataSetByName>\r
+         <!--Optional:-->\r
+         <tem:name>?</tem:name>\r
+      </tem:GetDataSetByName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.GetDataSetByName"/></con:call></con:operation><con:operation id="30e39354-c20f-4359-a15a-00b90b3733cf" isOneWay="false" action="http://tempuri.org/SOAP.Demo.GetListByName" name="GetListByName" bindingOperationName="GetListByName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="300b34a1-aaf2-43c3-829b-7aa7ed9bfe06" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetListByName>\r
+         <!--Optional:-->\r
+         <tem:name>?</tem:name>\r
+      </tem:GetListByName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.GetListByName"/></con:call></con:operation><con:operation id="13a97271-f459-46b7-a98e-a4b565d30484" isOneWay="false" action="http://tempuri.org/SOAP.Demo.LookupCity" name="LookupCity" bindingOperationName="LookupCity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="798985f9-840d-4b2a-a032-4e743c67da1b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:LookupCity>\r
+         <!--Optional:-->\r
+         <tem:zip>?</tem:zip>\r
+      </tem:LookupCity>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.LookupCity"/></con:call></con:operation><con:operation id="fb221e6c-3871-45b2-887a-55b529075c55" isOneWay="false" action="http://tempuri.org/SOAP.Demo.Mission" name="Mission" bindingOperationName="Mission" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="92608d86-250b-4e44-a20a-813aabef24c5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Mission/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.Mission"/></con:call></con:operation><con:operation id="e55952ff-9a7d-4e44-9be9-0967a1a9a9a4" isOneWay="false" action="http://tempuri.org/SOAP.Demo.QueryByName" name="QueryByName" bindingOperationName="QueryByName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fb2342df-432c-49d9-a584-8702a1d4e42a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:QueryByName>\r
+         <!--Optional:-->\r
+         <tem:name>?</tem:name>\r
+      </tem:QueryByName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.QueryByName"/></con:call></con:operation></con:interface><con:testSuite id="4bbfb912-202a-41c6-9119-b30cf4ab5655" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1c6fd3eb-e7e0-4fb7-8364-eddd658d0584" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="8a291ddf-c413-4efb-a4d3-baf1a30c09fb" name="FindPerson - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPDemoSoap</con:interface><con:operation>FindPerson</con:operation><con:request name="FindPerson - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="84871478-0dbd-4fa9-bbec-034178317008"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:FindPerson>\r
+         <!--Optional:-->\r
+         <tem:id>32</tem:id>\r
+      </tem:FindPerson>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="24d8792a-f978-4dec-9af9-38d64d9b6cf0" name="SOAP Response"/><con:assertion type="Simple Contains" id="01b10e17-9340-4dd4-af6c-5891cd9eab6a" name="Contains"><con:configuration><token>Reston</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="95f46ffb-8113-4466-b8d5-42e5e65da68b" name="Not Contains"><con:configuration><token>Newton</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.FindPerson"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="dc5b5f04-b4fb-472f-9e56-b498efdb066a" name="GetByName - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPDemoSoap</con:interface><con:operation>GetByName</con:operation><con:request name="GetByName - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d136ff1b-fffc-4ff1-a6cf-2dd63ad5d974"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.crcind.com:443/csp/samples/SOAP.Demo.cls</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetByName>\r
+         <!--Optional:-->\r
+         <tem:name>Newton</tem:name>\r
+      </tem:GetByName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="367db6f1-4256-42b6-acd8-0b93dc69f81c" name="SOAP Response"/><con:assertion type="XPath Match" id="dbee72ae-f863-4177-b89c-a3bf13fd68ee" name="XPath Verif ID"><con:configuration><path>declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/ID</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="31d9f946-8e78-42db-9cc5-5b8e183e0fdc" name="XPath SSN"><con:configuration><path>declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/DOB/following-sibling::SSN</path><content>384-10-6538</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="c6d4dbfc-f301-4957-b807-3cf89b1ad402" name="XPath Nb Newton"><con:configuration><path>declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+count(//Name[contains(., 'Newton')])</path><content>2</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/SOAP.Demo.GetByName"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>Id</con:name><con:value>32</con:value></con:property><con:property><con:name>Name</con:name><con:value>Newton</con:value></con:property><con:property><con:name>nbNewtonatt</con:name><con:value>2</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/></con:soapui-project>

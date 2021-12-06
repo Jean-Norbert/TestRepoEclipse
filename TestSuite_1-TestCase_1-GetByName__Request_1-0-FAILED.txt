@@ -1,0 +1,132 @@
+Status: FAILED
+Time Taken: 41
+Size: 1852
+Timestamp: Mon Dec 06 16:23:10 CET 2021
+TestStep: GetByName - Request 1
+
+----------------- Messages ------------------------------
+[XPath Verif ID] XPathContains assertion failed for path [declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/ID] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying delegated path engine... FAILED on declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/ID
+[XPath SSN] XPathContains assertion failed for path [declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/DOB/following-sibling::SSN] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying delegated path engine... FAILED on declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/DOB/following-sibling::SSN
+[XPath Nb Newton] XPathContains assertion failed for path [declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+count(//Name[contains(., 'Newton')])] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying delegated path engine... FAILED on declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+count(//Name[contains(., 'Newton')])
+
+----------------- Properties ------------------------------
+Endpoint: https://www.crcind.com:443/csp/samples/SOAP.Demo.cls
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : "http://tempuri.org/SOAP.Demo.GetByName"
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.2.1 (java 1.5)
+Host : www.crcind.com:443
+Accept-Encoding : gzip,deflate
+Content-Length : 301
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetByName>
+         <!--Optional:-->
+         <tem:name>Newton</tem:name>
+      </tem:GetByName>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Cache-Control : no-cache
+Server : Microsoft-IIS/8.5
+Content-Encoding : gzip
+Set-Cookie : CSPSESSIONID-SP-443-UP-csp-samples-=005000010000BiDrS6vQuz0000RsuW43pGtbB$nOpnfLWWRg--; path=/csp/samples/;  secure; httpOnly;
+Set-Cookie : CSPWSERVERID=56cd9b9b1cd3a6104035e2b9b38ec1f2908c3ea3; path=/; httpOnly; secure;
+Pragma : no-cache
+Expires : Thu, 29 Oct 1998 17:04:19 GMT
+#status# : HTTP/1.1 200 OK
+Content-Length : 697
+Date : Mon, 06 Dec 2021 15:23:10 GMT
+Content-Type : text/xml; charset=UTF-8
+X-Powered-By : ASP.NET
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <GetByNameResponse xmlns="http://tempuri.org">
+         <GetByNameResult>
+            <s:schema id="ListByName" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+               <s:element name="ListByName" msdata:IsDataSet="true">
+                  <s:complexType>
+                     <s:choice maxOccurs="unbounded">
+                        <s:element name="SQL">
+                           <s:complexType>
+                              <s:sequence>
+                                 <s:element name="ID" type="s:long" minOccurs="0"/>
+                                 <s:element name="Name" type="s:string" minOccurs="0"/>
+                                 <s:element name="DOB" type="s:date" minOccurs="0"/>
+                                 <s:element name="SSN" type="s:string" minOccurs="0"/>
+                              </s:sequence>
+                           </s:complexType>
+                        </s:element>
+                     </s:choice>
+                  </s:complexType>
+                  <s:unique name="Constraint1" msdata:PrimaryKey="true">
+                     <s:selector xpath=".//SQL"/>
+                     <s:field xpath="ID"/>
+                  </s:unique>
+               </s:element>
+            </s:schema>
+            <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+               <ListByName xmlns="">
+                  <SQL diffgr:id="SQL1" msdata:rowOrder="0">
+                     <ID>1</ID>
+                     <Name>Newton,Dave R.</Name>
+                     <DOB>2000-03-20</DOB>
+                     <SSN>384-10-6538</SSN>
+                  </SQL>
+                  <SQL diffgr:id="SQL2" msdata:rowOrder="1">
+                     <ID>29</ID>
+                     <Name>Newton,Mario B.</Name>
+                     <DOB>2004-11-17</DOB>
+                     <SSN>538-68-5047</SSN>
+                  </SQL>
+               </ListByName>
+            </diffgr:diffgram>
+         </GetByNameResult>
+      </GetByNameResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,59 @@
+2021-12-06 16:23:08,719 WARN  [SoapUI] Missing folder [C:\Users\formation\Documents\SquashTA-1.10.0-RELEASE-workspace\Mon_Premier_projet\ext] for external libraries
+2021-12-06 16:23:08,880 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\formation\soapui-settings.xml]
+2021-12-06 16:23:09,741 INFO  [PluginManager] 0 plugins loaded in 1 ms
+2021-12-06 16:23:09,741 INFO  [DefaultSoapUICore] All plugins loaded
+2021-12-06 16:23:10,535 INFO  [WsdlProject] Loaded project from [file:/C:/Users/formation/Documents/SquashTA-1.10.0-RELEASE-workspace/Mon_Premier_projet/src/test/resources/Countryname-soapui-project.xml]
+2021-12-06 16:23:10,539 INFO  [SoapUITestCaseRunner] Running SoapUI tests in project [Countryname]
+2021-12-06 16:23:10,540 INFO  [SoapUITestCaseRunner] Running Project [Countryname], runType = SEQUENTIAL
+2021-12-06 16:23:10,549 INFO  [SoapUITestCaseRunner] Running SoapUI testcase [TestCase 1]
+2021-12-06 16:23:10,553 INFO  [SoapUITestCaseRunner] running step [FindPerson - Request 1]
+2021-12-06 16:23:10,889 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2021-12-06 16:23:10,890 INFO  [SoapUITestCaseRunner] Assertion [Contains] has status VALID
+2021-12-06 16:23:10,890 INFO  [SoapUITestCaseRunner] Assertion [Not Contains] has status VALID
+2021-12-06 16:23:10,890 INFO  [SoapUITestCaseRunner] running step [GetByName - Request 1]
+2021-12-06 16:23:10,933 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2021-12-06 16:23:10,933 INFO  [SoapUITestCaseRunner] Assertion [XPath Verif ID] has status FAILED
+2021-12-06 16:23:10,933 ERROR [SoapUITestCaseRunner] ASSERTION FAILED -> XPathContains assertion failed for path [declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/ID] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying delegated path engine... FAILED on declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/ID
+2021-12-06 16:23:10,933 INFO  [SoapUITestCaseRunner] Assertion [XPath SSN] has status FAILED
+2021-12-06 16:23:10,933 ERROR [SoapUITestCaseRunner] ASSERTION FAILED -> XPathContains assertion failed for path [declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/DOB/following-sibling::SSN] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying delegated path engine... FAILED on declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+//diffgr:diffgram/ListByName/SQL[1]/DOB/following-sibling::SSN
+2021-12-06 16:23:10,933 INFO  [SoapUITestCaseRunner] Assertion [XPath Nb Newton] has status FAILED
+2021-12-06 16:23:10,934 ERROR [SoapUITestCaseRunner] ASSERTION FAILED -> XPathContains assertion failed for path [declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+count(//Name[contains(., 'Newton')])] : RuntimeException: Trying XBeans path engine... Trying XQRL... Trying delegated path engine... FAILED on declare namespace ns1='';
+declare namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace s='http://www.w3.org/2001/XMLSchema';
+declare namespace ns2='http://tempuri.org';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+count(//Name[contains(., 'Newton')])
+2021-12-06 16:23:10,934 ERROR [SoapUITestCaseRunner] GetByName - Request 1 failed, exporting to [C:\Users\formation\Documents\SquashTA-1.10.0-RELEASE-workspace\Mon_Premier_projet\TestSuite_1-TestCase_1-GetByName__Request_1-0-FAILED.txt]
+2021-12-06 16:23:10,941 INFO  [SoapUITestCaseRunner] Finished running SoapUI testcase [TestCase 1], time taken: 373ms, status: FAILED
+2021-12-06 16:23:10,942 INFO  [SoapUITestCaseRunner] Project [Countryname] finished with status [FAILED] in 399ms
